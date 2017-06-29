@@ -23,7 +23,7 @@ def backend():
             r = requests.get('https://pgorelease.nianticlabs.com/plfe/version', proxies=pr, timeout=5)
             if r.status_code == 200:
                 nstatus = '200 OK, proxy is not banned.'
-                nver = r.text.replace("", '')
+                nver = r.text.replace(" ", '')
             if r.status_code == 403:
                 nstatus = '403 Forbidden, proxy is banned.'
         except requests.exceptions.Timeout:
@@ -66,7 +66,7 @@ def wildcard():
             r = requests.get('https://pgorelease.nianticlabs.com/plfe/version', proxies=pr, timeout=5)
             if r.status_code == 200:
                 nstatus = '200 OK, proxy is not banned.'
-                nver = r.text.replace('', '')
+                nver = r.text.replace(' ', '')
             if r.status_code == 403:
                 nstatus = '403 Forbidden, proxy is banned.'
         except requests.exceptions.Timeout:
@@ -111,7 +111,7 @@ def api():
             r = requests.get('https://pgorelease.nianticlabs.com/plfe/version', proxies=pr, timeout=5)
             if r.status_code == 200:
                 nstatus = '200 OK, proxy is not banned.'
-                nver = r.text.replace("", '')
+                nver = r.text.replace(" ", '')
             if r.status_code == 403:
                 nstatus = '403 Forbidden, proxy is banned.'
         except requests.exceptions.Timeout:
@@ -154,7 +154,7 @@ def wildcard_api():
             r = requests.get('https://pgorelease.nianticlabs.com/plfe/version', proxies=pr, timeout=5)
             if r.status_code == 200:
                 nstatus = '200 OK, proxy is not banned.'
-                nver = r.text.replace('', '')
+                nver = r.text.replace(' ', '')
             if r.status_code == 403:
                 nstatus = '403 Forbidden, proxy is banned.'
         except requests.exceptions.Timeout:
