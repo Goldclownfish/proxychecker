@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="github.css" />
+        <base />
+        <title>Our API</title>
+    </head>
+
+    <body id="body">
+        <h1 id="Our20API">Our API</h1>
+        <h2 id="Want20to20use20our20API?">Want to use our API?</h2>
+        <p>There are a few endpoints to this API, however they are relatively simple. This API is free and will always be free.</p>
+        <h2 id="Main20API">Main API</h2>
+        <p>Endpoint: <code>/api</code></p>
+        <p>Supported Methods: GET</p>
+        <p>URL Parameters:</p>
+        <ul>
+            <li>Proxy (ex. 1.2.3.4:5000)</li>
+        </ul>
+        <p>An example request looks like this:
+            <code>/api?proxy=1.2.3.4:5000</code></p>
+        <p>It will return a response which looks like this:
+            <code>{ "proxy": "1.2.3.4:5000", "pstatus": "200 OK, proxy is not banned.", "nstatus": "200 OK, proxy is not banned.", "nver": " 0.67.1" }</code></p>
+        <p>Explanation:</p>
+        <ul>
+            <li><code>proxy</code>: The proxy used.</li>
+            <li><code>pstatus</code>: Pokemon Trainer Club status (whether or not this API can be used with Pokemon Trainer Club logins)</li>
+            <li><code>nstatus</code>: Niantic status (Can this proxy be used on the Niantic servers?)</li>
+            <li><code>nver</code>: Niantic's latest forced version</li>
+        </ul>
+        <h2 id="Wildcard20API">Wildcard API</h2>
+        <p>Endpoint: <code>/wildcard_api</code></p>
+        <p>Supported Methods: GET</p>
+        <p>URL Parameters: None</p>
+        <p>Example request:
+            <code>/wildcard_api</code></p>
+        <p>The response is identical to the one delivered by the Main API.</p>
+    </body>
+
+</html>
