@@ -7,7 +7,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/',methods=["GET"])
+@app.route('/')
 def backend():
     p = request.args.get("proxy")
     if p == None:
@@ -50,7 +50,7 @@ def backend():
 
         return render_template('main.html', pstatus=pstatus, nstatus=nstatus, proxy=pr['https'], nver=nver)
 
-@app.route('/wildcard',methods=["GET"])
+@app.route('/wildcard')
 def wildcard():
     try:
         r = requests.get(url="https://gimmeproxy.com/api/getProxy?protocol=http", timeout=5)
@@ -95,7 +95,7 @@ def wildcard():
     except Timeout:
         return 'Initial proxy check timed out.'
 
-@app.route('/api',methods=["GET"])
+@app.route('/api')
 def api():
     p = request.args.get("proxy")
     if p == None:
@@ -138,7 +138,7 @@ def api():
 
         return render_template('api.html', pstatus=pstatus, nstatus=nstatus, proxy=pr['https'], nver=nver)
 
-@app.route('/wildcard_api', methods=["GET"])
+@app.route('/wildcard_api')
 def wildcard_api():
     try:
         r = requests.get(url="https://gimmeproxy.com/api/getProxy?protocol=http", timeout=5)
